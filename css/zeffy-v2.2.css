@@ -1,0 +1,56 @@
+:root {
+    --c-primary: #E10;
+}
+/* inline button */
+.zeffy-btn {
+    font-weight: bold;
+    background-color: #0000;
+    /* color: #900; */
+    cursor: crosshair;
+    font-size: 1.3em;
+    font-family: 'akkurat-monoregular';
+    border: none;
+    z-index: 9999999;
+}
+.zeffy-btn:hover, .item1 {
+    color: #eee;
+    animation: flash 3s linear infinite;
+}
+.zeffy-btn:focus, .zeffy-bottom:focus {
+    outline: none;
+}
+
+@keyframes flash {
+    0% {
+        color: var(--c-primary);
+    }
+    25% {
+        color: rgb(23, 0, 0);
+    }
+    50% {
+        color: var(--c-primary);
+    }
+    75% {
+        color: rgba(234, 160, 160, 0);
+    }
+    100% {
+        color: var(--c-primary);
+    }
+}
+@keyframes pulse {
+    0% {
+        color: #eee;
+    }
+    25% {
+        color: #ddfa;
+    }
+    50% {
+        color: #eee;
+    }
+    75% {
+        color: #ddfa;
+    }
+    100% {
+        color: #eee;
+    }
+}
