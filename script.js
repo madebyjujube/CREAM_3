@@ -1,9 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    onMobileAndTabletStyles()});
-document.addEventListener("DOMContentLoaded", onMobileDevice);
-//=============================================================
-//=============================================================
-//=============================================================
 // Add event listeners after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", dragFunction);
 function dragFunction() {
@@ -51,24 +45,4 @@ function dragFunction() {
             }
         });
     });
-}
-function videoPlay() {
-    const video = document.querySelector('#headerVideo')
-    video.play();
-}
-
-function isMobileOrTablet() {
-    const mediaQuery = window.matchMedia("(max-width: 1048px)");
-    return mediaQuery.matches;
-}
-
-function onMobileAndTabletStyles() {
-    if (isMobileOrTablet()) {
-        const elementsToHide = document.querySelectorAll(".window-wrapper .vid-container");
-        const zeffyBtn = document.getElementById('zeffy-button');
-        zeffyBtn.style.position = "static";
-        elementsToHide.forEach((element) => {
-            element.style.display = "none";
-        });
-    }
 }
