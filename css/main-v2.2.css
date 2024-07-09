@@ -73,15 +73,15 @@ body {
 .header {
     display: flex;
     position: fixed;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
+    justify-content: stretch;
+    align-items: flex-start;
+    height: 60vh;
     width: 100vw;
     z-index: -1;
 }
 
-
 #headerVideo {
+    width: 100vw;
     min-width: 350px;
     z-index: 1;
 }
@@ -91,9 +91,9 @@ body {
     -webkit-backdrop-filter: blur(2em);
     backdrop-filter: blur(2em);
     background: hsla(0,0%,0%,0.7);
-    z-index: 2;
+    z-index: 10;
     width: 100vw;
-    top: 28vh;
+    top: 60vw;
     margin: 0;
     transition: all 1s ease;
     transition-delay: 300ms;
@@ -163,28 +163,15 @@ body {
         font-size: 14px;
     }
     .grid-text-box {
-        /* row-gap: 2em; */
+        width: 80vw;
         margin-top: 3em;
-        grid-template-rows: auto /*0.5fr 1fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 1fr*/ ;
+        grid-template-rows: auto;
         }
     .IPAD {
         display: inline;
     }
     .header {
-        top: 0;
-        height: 50vh;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    .grid-text-box {
-        width: 80vw;
-        /* margin-left: auto;
-        margin-right: 20vw; */
-    }
-    #text-wrapper {
-        width: 100vw;
-        top: 100vh;
-        z-index: 10;
+        height: 60vh;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -192,28 +179,15 @@ body {
         font-size: 16px;
     }
     .grid-text-box {
-        /* row-gap: 3em; */
         margin-top: 4em;
-        grid-template-rows: auto /* 0.5fr 1fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr 1fr*/;
+        grid-template-rows: auto;
+        width: 60vw;
         }
     .DESKTOP, .IPAD {
         display: inline;
     }
     .header {
         height: 90vh;
-        top: 0;
-        align-items: center;
-    }
-    .header > #headerVideo {
-        width: 90%;
-        min-width: 350px;
-        z-index: 1;
-    }
-    .text-wrapper {
-        top: 100vh;
-    }
-    .grid-text-box {
-        width: 60vw;
     }
 }
   
