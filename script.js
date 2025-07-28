@@ -1,9 +1,36 @@
+const parallax = document.getElementById('parallax');
+const containers = document.querySelectorAll(".vid-container");
+const languageSelect = document.getElementById('language-select');
+let ticking = false;
+
 // Add event listeners after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", dragFunction);
-function dragFunction() {
-    
+// parallax item
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const scrolled = window.scrollY;
+
+      // Parallax effect
+      const speed = 0.4;
+      parallax.style.transform = `translateY(${scrolled * speed}px)`;
+
+      // Show/hide language selector
+      if (scrolled > 20) {
+        languageSelect.classList.add('hidden');
+      } else {
+        languageSelect.classList.remove('hidden');
+      }
+
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
+
+function dragFunction() {    
     // Call the function to hide elements on page load
-    const containers = document.querySelectorAll(".vid-container");
     containers.forEach((container) => {
 
         // MOUSE DOWN
