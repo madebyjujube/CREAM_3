@@ -117,7 +117,7 @@ body {
     transition: all 1s ease;
     transition-delay: 300ms;
     height: auto;
-    padding-bottom: 70vh;
+    padding-bottom: 100vh;
     overflow: hidden;
 }
 /* 
@@ -184,6 +184,7 @@ body {
 @media screen and (min-width: 760px) {
     .text-wrapper {
         font-size: 14px;
+        padding-bottom: 60vh;
     }
     .grid-text-box {
         width: 80vw;
@@ -217,7 +218,7 @@ body {
   
 @media screen and (min-width: 2000px) {
     .text-wrapper {
-        padding-bottom: 100vh;
+        padding-bottom: 120vh;
     }
 }
   
