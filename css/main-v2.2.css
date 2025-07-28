@@ -180,8 +180,13 @@ body {
 .IPAD, .DESKTOP {
     display: none;
 }
-
-@media screen and (min-width: 760px) {
+@media screen and (max-width: 768px) {
+    #tixtree-wrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 768px) {
     .text-wrapper {
         font-size: 14px;
         padding-bottom: 60vh;
