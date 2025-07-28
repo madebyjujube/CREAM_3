@@ -213,6 +213,9 @@ body {
     }
 }
 @media screen and (min-width: 1200px) {
+    #language-select {
+        top: 95vh;
+    }
     #tixtree-wrapper {
         inset: 8%;
     }
@@ -234,6 +237,9 @@ body {
 }
   
 @media screen and (min-width: 2000px) {
+    #language-select {
+        top: 95vh;
+    }
     .text-wrapper {
         padding-bottom: 120vh;
     }
