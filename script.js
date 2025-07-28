@@ -1,10 +1,35 @@
 const parallax = document.getElementById('parallax');
 const containers = document.querySelectorAll(".vid-container");
 const languageSelect = document.getElementById('language-select');
+
+const tixtreeButton = document.getElementById('tixtree-button');
+const tixtreeWrapper = document.getElementById('tixtree-wrapper');
+
 let ticking = false;
+
+tixtreeButton.addEventListener('click', () => {
+  tixtreeWrapper.style.opacity = '1';
+  tixtreeWrapper.style.display = 'block';
+});
+
+// Close when clicking outside
+document.addEventListener('click', (event) => {
+  const isClickInside = tixtreeWrapper.contains(event.target) || tixtreeButton.contains(event.target);
+
+  if (!isClickInside && tixtreeWrapper.style.display === 'block') {
+    // Start fade-out
+    tixtreeWrapper.style.opacity = '0';
+
+    // Wait for opacity transition to finish before hiding
+    setTimeout(() => {
+      tixtreeWrapper.style.display = 'none';
+    }, 500); // Match this to your CSS transition duration
+  }
+});
 
 // Add event listeners after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", dragFunction);
+
 // parallax item
 window.addEventListener('scroll', () => {
   if (!ticking) {
@@ -14,6 +39,7 @@ window.addEventListener('scroll', () => {
       // Parallax effect
       const speed = 0.3;
       parallax.style.transform = `translateY(${scrolled * speed}px)`;
+      parallax.style.height = `(${scrolled * 2}px`;
 
       // Show/hide language selector
       if (scrolled > 20) {

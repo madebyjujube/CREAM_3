@@ -20,8 +20,8 @@ function onMobileAndTabletStyles() {
     if (isMobileOrTablet()) {
         videoPlay();
         const elementsToHide = document.querySelectorAll(".window-wrapper .vid-container");
-        const zeffyBtn = document.getElementById('zeffy-button');
-        zeffyBtn.style.position = "static";
+        const tixtreeBtn = document.getElementById('tixtree-button');
+        tixtreeBtn.style.position = "static";
         elementsToHide.forEach((element) => {
             element.style.display = "none";
         });

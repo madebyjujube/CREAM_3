@@ -2,7 +2,7 @@
     --c-primary: #E10;
 }
 /* inline button */
-.zeffy-btn {
+.tixtree-btn {
     font-weight: bold;
     background-color: #0000;
     /* color: #900; */
@@ -12,12 +12,21 @@
     border: none;
     z-index: 9999999;
 }
-.zeffy-btn:hover, .item1 {
+.tixtree-btn:hover, .item1 {
     color: #eee;
     animation: flash 3s linear infinite;
 }
-.zeffy-btn:focus, .zeffy-bottom:focus {
+.tixtree-btn:focus, .tixtree-bottom:focus {
     outline: none;
+}
+#tixtree-wrapper {
+    height: fit-content;
+    display: none; 
+    position: fixed; 
+    inset: 5% 10%; 
+    z-index: 10000; 
+    transition: opacity 0.25s ease-in-out 0s; 
+    opacity: 0; 
 }
 
 @keyframes flash {

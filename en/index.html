@@ -6,11 +6,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/main-v2.2.css">
     <link rel="stylesheet" href="/css/styles-v2.2.css">
-    <link rel="stylesheet" href="/css/zeffy-v2.2.css">
+    <link rel="stylesheet" href="/css/tixtree-v2.2.css">
     <script src="/mobile.js" defer></script>
-    <!-- <script src="https://js.hubspot.com/web-interactives-embed.js" defer></script> -->
-    <!-- <script src="zeffy-scripts.s3.ca-central-1.amazonaws.com_embed-form-script.min.js" defer></script> -->
-    
     <title>C.R.E.A.M</title> 
 </head>
 <body>
@@ -18,15 +15,15 @@
     <script src="/script.js" defer></script>
     <div class="header">
          <video id="headerVideo" autoplay="true" poster="/assets/video/CREAM4.gif" loop muted>
-            <!-- poster="/assets/video/CREAM33.gif" (in video tag) -->
+            <!-- poster="/assets/video/CREAM4.gif" (in video tag) -->
             <img class="logo" src="/assets/SVG/staaar.svg">
             <source src="/assets/video/CREAM4.webm" type="video/mp4" autoplay muted>
-            <!-- <source src="/assets/video/CREAM33.gif" type="video/gif"> -->
+            <source src="/assets/video/CREAM4.gif" type="video/gif">
         </video>
     </div>
     <nav id="language-select">
         <div>
-            <a class="inline" href="/fr/">FRENCH</a>
+            <a class="inline" href="/fr/">FRANÇAIS</a>
             <p class="inline">/</p>
             <a class="inline" href="/en/">ENGLISH</a>
         </div>
@@ -35,7 +32,7 @@
     <article class="text-wrapper">
         <div id="deets"></div>
         <div id="parallax" class="grid-text-box"> 
-            <div class="item-1"><a class="zeffy-btn" id="zeffy-button" zeffy-form-link="https://www.zeffy.com/embed/ticketing/e2d60f52-5d00-4374-adbe-e5c12b12cc0e" allowpaymentrequest allowTransparency="true">CLICK HERE FOR TICKETS</a>
+            <div class="item-1"><a class="tixtree-btn" id="tixtree-button">CLICK HERE FOR TICKETS</a>
             </div>
             <div class="item-001">
                 <p>After a year-long hiatus we’re back(!) with the fifth edition of C.R.E.A.M. Join us on Friday August 29th 2025 as we pay homage to our hero and our heartbeat: David Lynch. Hailing from the birthplace of Lynch himself (Missoula, Montana), we are ecstatic to welcome identical twin performance artists MOTHERMARY, followed by a screening of “WILD AT HEART” and a rave to seal the eve with a kiss. The NEW YORK REVIEW OF SMUT will also be launching the first edition of their nasty piece of work, with copies for sale all night long.</p>
@@ -69,9 +66,6 @@
             <div class="left_title">18+<p class="IPAD">...</p><p class="DESKTOP">.............</p>........................</div>
             <div class="right_text">LOVE ME TENDER</div>
             
-            <div class="left_title">18+<p class="IPAD">...</p><p class="DESKTOP">.............</p>........................</div>
-            <div class="right_text">LOVE ME TENDER</div>
-            
             
             <div class="left_title">DRESSCODE<p class="IPAD">...</p><p class="DESKTOP">.............</p>..................</div>
             <div class="right_text">SNAKESKIN</div>
@@ -86,11 +80,6 @@
             <div class="left_title">SOUND SYSTEM<p class="IPAD">...</p><p class="DESKTOP">.............</p>...............</div>
             <div class="right_text">ELASTIQUE AUDIO</div>
 
-
-            <!-- <div class="left_title item-13">HOSTED AT CINEMA L'AMOUR<p class="IPAD">...</p><p class="DESKTOP">.............</p>...</div>
-            <div class="right_text item-14">4015 BLVD SAINT LAURENT</div>    -->
-            
-            
             <div class="left_title">DOORS: 21:00</div>
             <div class="right_text"></div>
             <div class="left_title">MOTHERMARY: 21:30</div>
@@ -119,9 +108,14 @@
 
             <div class="left_title">ACCESSIBILITY<p class="IPAD">...</p><p class="DESKTOP">.............</p>..............<br>AT CINEMA L’AMOUR</div>
             <div class="right_text">Bathrooms are gender-neutral. The cinema is wheelchair accessible. Please let us know if you require any kind of assistance.</div>
+            <br>
+            <br>
+            <br>
         </div>
     </article>
     
-    <!-- <div aria-hidden="true" style="display: none; position: fixed; inset: 5% 10%; z-index: 10000; transition: opacity 0.25s ease-in-out 0s; opacity: 0;"><iframe title="Form powered and secured by Zeffy" src="https://www.zeffy.com/en-CA/embed/ticketing/a5ef0fa9-0862-4ed6-94d7-445dc4618760" allow="payment" style="width: 100%; height: 100%; border: none; border-radius: 4px;"></iframe></div> -->
+    <div aria-hidden="true" id="tixtree-wrapper">
+        <script id="tixtree-script" src="https://www.tixtree.com/widgets/tixtree.js" data-type="event" data-id="wild-at-heart-1990-mothermary-laurence-matte-r-oderick-temple-records-181b5228045b"></script>
+    </div>
 </body>
 </html>
