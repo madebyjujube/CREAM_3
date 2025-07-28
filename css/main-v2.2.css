@@ -116,7 +116,7 @@ body {
     margin: 0;
     transition: all 1s ease;
     transition-delay: 300ms;
-    height: 440%;
+    height: 470%;
 }
 /* 
 ========================
@@ -182,6 +182,7 @@ body {
 @media screen and (min-width: 760px) {
     .text-wrapper {
         font-size: 14px;
+        height: 310%;
     }
     .grid-text-box {
         width: 80vw;
@@ -198,6 +199,7 @@ body {
 @media screen and (min-width: 1200px) {
     .text-wrapper {
         font-size: 16px;
+        height: 370%;
     }
     .grid-text-box {
         margin-top: 4em;

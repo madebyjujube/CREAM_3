@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
 
       // Parallax effect
-      const speed = 0.4;
+      const speed = 0.3;
       parallax.style.transform = `translateY(${scrolled * speed}px)`;
 
       // Show/hide language selector
