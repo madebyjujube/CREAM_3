@@ -184,12 +184,14 @@ body {
     #tixtree-wrapper {
         width: 100vw;
         height: 100vh;
+        inset: 0; 
     }
 }
 @media screen and (min-width: 768px) {
     #tixtree-wrapper {
         width: 100vw;
         height: 100vh;
+        inset: 0; 
     }
     .text-wrapper {
         font-size: 14px;
