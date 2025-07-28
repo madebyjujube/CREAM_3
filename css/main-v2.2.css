@@ -87,7 +87,7 @@ body {
 }
 #language-select {
     width: 100vw;
-    bottom: 5vh;
+    top: 95vh;
     text-align: center;
     position: absolute;
     z-index: 9000;
