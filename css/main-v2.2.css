@@ -181,8 +181,12 @@ body {
     display: none;
 }
 @media screen and (max-width: 768px) {
+    #tixtree-close {
+        display: block;
+    }
     #tixtree-wrapper {
         width: 100vw;
+        height: 80vh;
         border-radius: 0;
         padding-bottom: 100vh;
     }

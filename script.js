@@ -1,110 +1,100 @@
-const parallax = document.getElementById('parallax');
+const parallaxText = document.getElementById('parallax-text');
 const containers = document.querySelectorAll(".vid-container");
 const languageSelect = document.getElementById('language-select');
 
 const tixtreeButton = document.getElementById('tixtree-button');
 const tixtreeWrapper = document.getElementById('tixtree-wrapper');
+const closeBtn = document.getElementById('tixtree-close');
 
 let ticking = false;
 
-tixtreeButton.addEventListener('click', () => {
-  tixtreeWrapper.style.opacity = '1';
-  tixtreeWrapper.style.display = 'block';
+// EVENT LISTENERS
+document.addEventListener('DOMContentLoaded', function() {
+  startVid();
+  updateCloseButtonVisibility();
 });
+window.addEventListener('resize', updateCloseButtonVisibility);
+tixtreeButton.addEventListener('click', openTixtree);
 
-// video autoplay fallback
-document.addEventListener('DOMContentLoaded', () => {
+if (closeBtn) {
+  closeBtn.addEventListener('click', closeTixtree);
+}
+
+document.addEventListener('click', closeTixtreeOutside);
+window.addEventListener('scroll', handleScroll);
+
+// FUCNTIONS
+// Initialize mobile close button if it exists
+function updateCloseButtonVisibility() {
+  if (!closeBtn || !tixtreeWrapper) return;
+  
+  const isMobile = window.innerWidth <= 768;
+  const isTixtreeVisible = tixtreeWrapper.style.display === 'block';
+  
+  if (isMobile && isTixtreeVisible) {
+    closeBtn.style.display = 'flex';
+    closeBtn.style.opacity = '1';
+  } else {
+    closeBtn.style.display = 'none';
+    closeBtn.style.opacity = '0';
+  }
+}
+
+function startVid() {
   const vid = document.getElementById('headerVideo');
   if (vid && vid.paused) {
     vid.play().catch((e) => {
       console.log('Autoplay failed:', e);
     });
   }
-});
-// Close when clicking outside
-document.addEventListener('click', (event) => {
-  const isClickInside = tixtreeWrapper.contains(event.target) || tixtreeButton.contains(event.target);
+}
 
+function openTixtree() {
+  if (!tixtreeWrapper) return;
+  tixtreeWrapper.style.display = 'block';
+  setTimeout(() => {
+    tixtreeWrapper.style.opacity = '1';
+    updateCloseButtonVisibility(); // Update close button when opening
+  }, 10);
+}
+
+function closeTixtree() {
+  if (!tixtreeWrapper) return;
+  tixtreeWrapper.style.opacity = '0';
+  setTimeout(() => {
+    tixtreeWrapper.style.display = 'none';
+    updateCloseButtonVisibility(); // Update close button when closing
+  }, 400);
+}
+
+function closeTixtreeOutside(e) {
+  if (!tixtreeWrapper || !tixtreeButton) return;
+  const isClickInside = tixtreeWrapper.contains(e.target) || tixtreeButton.contains(e.target);
   if (!isClickInside && tixtreeWrapper.style.display === 'block') {
-    // Start fade-out
-    tixtreeWrapper.style.opacity = '0';
-
-    // Wait for opacity transition to finish before hiding
-    setTimeout(() => {
-      tixtreeWrapper.style.display = 'none';
-    }, 500); // Match this to your CSS transition duration
+    closeTixtree();
   }
-});
+}
 
-// Add event listeners after the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", dragFunction);
-
-// parallax item
-window.addEventListener('scroll', () => {
+function handleScroll() {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       const scrolled = window.scrollY;
-
-      // Parallax effect
-      const speed = 0.3;
-      parallax.style.transform = `translateY(${scrolled * speed}px)`;
-      parallax.style.height = `(${scrolled * 2}px`;
-
-      // Show/hide language selector
-      if (scrolled > 20) {
-        languageSelect.classList.add('hidden');
-      } else {
-        languageSelect.classList.remove('hidden');
-      }
-
+      parallaxFx(scrolled);
+      toggleLanguageSelector(scrolled);
       ticking = false;
     });
-
     ticking = true;
   }
-});
+}
 
-function dragFunction() {    
-    // Call the function to hide elements on page load
-    containers.forEach((container) => {
+function parallaxFx(scrolled) {
+  if (!parallaxText) return;
+  const speed = 0.3;
+  parallaxText.style.transform = `translateY(${scrolled * speed}px)`;
+  // Removed the height change as it might cause layout issues
+}
 
-        // MOUSE DOWN
-        container.addEventListener("mousedown", (e) => {
-            let isDragging = true;
-            const offsetX = e.clientX - container.getBoundingClientRect().left;
-            const offsetY = e.clientY - container.getBoundingClientRect().top;
-
-            document.onmousemove = (event) => {
-                if (isDragging) {
-                    const newX = event.clientX - offsetX;
-                    const newY = event.clientY - offsetY;
-                    // Constrain within the window
-                    container.style.left = Math.min(
-                        Math.max(newX, 0),
-                        window.innerWidth - container.offsetWidth
-                    ) + "px";
-                    container.style.top = Math.min(
-                        Math.max(newY, 0),
-                        window.innerHeight - container.offsetHeight
-                    ) + "px";
-                }
-            };
-
-            document.onmouseup = () => {
-                isDragging = false;
-                document.onmousemove = null;
-                document.onmouseup = null;
-            };
-        });
-
-        // Add toggle functionality to the X button
-        const closeButton = container.querySelector(".close-button");
-        closeButton.addEventListener("click", () => {
-            if (container.style.display === "block" || container.style.display === "") {
-                container.style.display = "none";
-            } else {
-                container.style.display = "block";
-            }
-        });
-    });
+function toggleLanguageSelector(scrolled) {
+  if (!languageSelect) return;
+  languageSelect.classList.toggle('hidden', scrolled > 20);
 }
