@@ -135,7 +135,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
-    padding-bottom: 200px;
+    padding-bottom: 400px;
 }
 
 .grid-text-box > * {
@@ -184,6 +184,7 @@ body {
     #tixtree-wrapper {
         width: 100vw;
         border-radius: 0;
+        padding-bottom: 100vh;
     }
     #language-select {
         top: 0.4em;
@@ -198,7 +199,7 @@ body {
     }
     .text-wrapper {
         font-size: 14px;
-        padding-bottom: 80vh;
+        padding-bottom: 90vh;
     }
     .grid-text-box {
         width: 80vw;

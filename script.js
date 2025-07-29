@@ -12,6 +12,15 @@ tixtreeButton.addEventListener('click', () => {
   tixtreeWrapper.style.display = 'block';
 });
 
+// video autoplay fallback
+document.addEventListener('DOMContentLoaded', () => {
+  const vid = document.getElementById('headerVideo');
+  if (vid && vid.paused) {
+    vid.play().catch((e) => {
+      console.log('Autoplay failed:', e);
+    });
+  }
+});
 // Close when clicking outside
 document.addEventListener('click', (event) => {
   const isClickInside = tixtreeWrapper.contains(event.target) || tixtreeButton.contains(event.target);
