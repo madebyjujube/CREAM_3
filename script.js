@@ -91,7 +91,6 @@ function parallaxFx(scrolled) {
   if (!parallaxText) return;
   const speed = 0.3;
   parallaxText.style.transform = `translateY(${scrolled * speed}px)`;
-  // Removed the height change as it might cause layout issues
 }
 
 function toggleLanguageSelector(scrolled) {
