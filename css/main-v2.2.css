@@ -44,6 +44,10 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 #scroll-to {
     position: absolute;
     width: 100vw;

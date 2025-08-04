@@ -52,18 +52,20 @@ function startVid() {
 function openTixtree() {
   if (!tixtreeWrapper) return;
   tixtreeWrapper.style.display = 'block';
+  document.body.classList.add('no-scroll');
   setTimeout(() => {
     tixtreeWrapper.style.opacity = '1';
-    updateCloseButtonVisibility(); // Update close button when opening
+    updateCloseButtonVisibility(); 
   }, 10);
 }
 
 function closeTixtree() {
   if (!tixtreeWrapper) return;
   tixtreeWrapper.style.opacity = '0';
+  document.body.classList.remove('no-scroll');
   setTimeout(() => {
     tixtreeWrapper.style.display = 'none';
-    updateCloseButtonVisibility(); // Update close button when closing
+    updateCloseButtonVisibility();
   }, 400);
 }
 
