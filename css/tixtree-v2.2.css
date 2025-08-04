@@ -34,9 +34,15 @@
     outline: none;
 }
 #tixtree-wrapper {
-    height: fit-content;
+    height: 90vh;
     display: none; 
     position: fixed; 
+    overflow: auto;
+    &::-webkit-scrollbar {
+    display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     z-index: 10000;
     transition: opacity 0.25s ease-in-out 0s; 
     opacity: 0; 
